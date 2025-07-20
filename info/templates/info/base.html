@@ -10,10 +10,17 @@
 <body class="d-flex flex-column min-vh-100">
 
     {% include 'info/navbar.html' %}
+    <div class="container-fluid my-4 flex-grow-1">
+        <div class="row">
+            {% include 'info/sidebar.html' %}
+            {% block sidebar %}{% endblock %}
 
-    <main class="container my-4 flex-grow-1">
-        {% block content %}{% endblock %}
-    </main>
+            <div class="{% block content_col %}col-md-12{% endblock %}">
+                {% block content %}{% endblock %}
+            </div>
+
+        </div>
+    </div>
 
     {% include 'info/footer.html' %}
 

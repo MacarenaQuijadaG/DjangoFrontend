@@ -1,9 +1,14 @@
-<!-- info/templates/info/home.html -->
+<!-- info/templates/info/index.html -->
+
 {% extends 'info/base.html' %}
 
 {% block title %}Inicio{% endblock %}
 
+{% block sidebar %}
+    {% include 'info/sidebar.html' %}
+{% endblock %}
+
 {% block content %}
-<h1>Página de Inicio</h1>
-<p>Bienvenido a la página principal del sitio.</p>
+<h1>Contenido principal</h1>
+<p>Aquí va el contenido que quieras mostrar.</p>
 {% endblock %}

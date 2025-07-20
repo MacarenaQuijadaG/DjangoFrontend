@@ -1,0 +1,61 @@
+<!-- info/templates/info/sidebar.html -->
+
+<style>
+    #sidebar {
+        position: fixed;
+        top: 56px; /* altura navbar */
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #343a40;
+        color: white;
+        padding-top: 1rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1040;
+    }
+
+    #sidebar.active {
+        transform: translateX(0);
+    }
+
+    #sidebar a {
+        color: white;
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+
+    #sidebar a:hover {
+        background-color: #495057;
+    }
+
+    .content-with-sidebar {
+        margin-left: 0;
+        transition: margin-left 0.3s ease;
+    }
+
+    body.sidebar-open .content-with-sidebar {
+        margin-left: 200px;
+    }
+</style>
+
+<div id="sidebar">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="#">Otra Página</a>
+    <a href="#">Perfil</a>
+    <a href="#">Cerrar sesión</a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("sidebar");
+    const body = document.body;
+
+    toggleButton.addEventListener("click", function () {
+        sidebar.classList.toggle("active");
+        body.classList.toggle("sidebar-open");
+    });
+});
+</script>
