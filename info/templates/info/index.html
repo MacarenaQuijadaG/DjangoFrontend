@@ -1,70 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Página Principal</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1, h2 { color: #333; }
-    table { border-collapse: collapse; width: 50%; }
-    table, th, td { border: 1px solid #999; }
-    th, td { padding: 8px; text-align: left; }
-    form { margin-top: 20px; }
-    input, textarea { width: 300px; padding: 5px; }
-    button { margin-top: 10px; }
-  </style>
-</head>
-<body>
+<!-- info/templates/info/home.html -->
+{% extends 'info/base.html' %}
 
-  <h1>Bienvenido a mi página principal</h1>
+{% block title %}Inicio{% endblock %}
 
-  <!-- ✅ Sección de Información -->
-  <h2>Sección de Información</h2>
-  <p>Este es un proyecto Django.</p>
-
-  <!-- ✅ Sección de Tabla -->
-  <h2>Tabla de Usuarios</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Correo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Ana</td>
-        <td>ana@example.com</td>
-      </tr>
-      <tr>
-        <td>Juan</td>
-        <td>juan@example.com</td>
-      </tr>
-      <tr>
-        <td>Pedro</td>
-        <td>pedro@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- ✅ Sección de Formulario -->
-  <h2>Formulario de Contacto</h2>
-  <form method="POST">
-    {% csrf_token %}
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-
-    <label for="correo">Correo:</label><br>
-    <input type="email" id="correo" name="correo" required><br><br>
-
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" name="mensaje" rows="4"></textarea><br><br>
-
-    <button type="submit">Enviar</button>
-  </form>
-
-  <!-- ✅ Sección de Imagen -->
-  <h2>Imagen de Ejemplo</h2>
-  <img src="https://via.placeholder.com/300x200" alt="Imagen de ejemplo">
-
-</body>
-</html>
+{% block content %}
+<h1>Bienvenido al inicio</h1>
+<p>Este es el contenido de la página de inicio.</p>
+{% endblock %}
