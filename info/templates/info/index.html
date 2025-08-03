@@ -1,14 +1,11 @@
 <!-- info/templates/info/index.html -->
-
 {% extends 'info/base.html' %}
 
 {% block title %}Inicio{% endblock %}
 
-{% block sidebar %}
-    {% include 'info/sidebar.html' %}
-{% endblock %}
-
 {% block content %}
-<h1>Contenido principal</h1>
-<p>Aquí va el contenido que quieras mostrar.</p>
+<h1 class="my-4">Productos destacados</h1>
+
+{% include 'info/cards.html' %}
+
 {% endblock %}
